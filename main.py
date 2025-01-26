@@ -60,7 +60,7 @@ def plot_3d_vector_field(vel_df, sum_df):
             # Append data to the lists
             x.extend(valid_rows['geometry'].x)
             y.extend(valid_rows['geometry'].y)
-            z.extend(valid_rows[location_col])
+            z.extend(-valid_rows[location_col])
             u.extend(valid_rows[ve_col])
             v.extend(valid_rows[vn_col])
             w.extend(valid_rows[vu_col])
@@ -113,4 +113,4 @@ def plot_3d_vector_field(vel_df, sum_df):
 data_vel_df = pd.read_csv("data/20250122130314.vel")
 data_sum_df = pd.read_csv("data/20250122130314.sum",encoding='ISO-8859-1')
 
-plot_3d_vector_field(data_vel_df.iloc[:1000], data_sum_df.iloc[:1000])
+plot_3d_vector_field(data_vel_df.iloc[:200], data_sum_df.iloc[:200])
